@@ -10,7 +10,7 @@ import com.agriconnect.backend.repository.FarmerReplyRepository;
 
 @RestController
 @RequestMapping("/api/replies")
-@CrossOrigin(origins = "http://localhost:5174")
+@CrossOrigin(origins = "*")
 public class FarmerReplyController {
 
     @Autowired

@@ -37,6 +37,14 @@ public class AuthController {
             return "User already exists";
         }
 
+        // ✅ PASSWORD VALIDATION
+        String password = user.getPassword();
+        String pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$";
+
+        if (!password.matches(pattern)) {
+            return "Password must be at least 8 characters and include uppercase, lowercase, number, and special character";
+        }
+
         String otp = String.valueOf((int)(Math.random() * 900000) + 100000);
 
         user.setOtp(otp);
